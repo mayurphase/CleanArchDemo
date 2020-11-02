@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using CleanArch.Infra.Data.Context;
+using CleanArch.Infra.IoC;
 
 namespace CleanArch.Mvc
 {
@@ -42,6 +43,7 @@ namespace CleanArch.Mvc
             services.AddControllersWithViews();
             services.AddRazorPages();
 
+            RegisterServices(services);
            
         }
 
@@ -74,6 +76,11 @@ namespace CleanArch.Mvc
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+        }
+
+        private static void RegisterServices(IServiceCollection services)
+        {
+            DependencyContainer.RegisterServices(services);
         }
     }
 }
