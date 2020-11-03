@@ -2,10 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using CleanArch.Domain;
 
 namespace CleanArch.Domain.Core.Commands
 {
-    public abstract class Command: Message
+    public abstract class Command : Message
     {
         public DateTime Timestamp { get;protected set; }
 

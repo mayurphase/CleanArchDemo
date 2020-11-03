@@ -11,3 +11,4 @@ namespace CleanArch.Domain.Core.Bus
         Task SendCommand<T>(T command) where T : Command;
     }
 }
+ 
